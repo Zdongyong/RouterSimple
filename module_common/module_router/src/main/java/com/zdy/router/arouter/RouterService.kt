@@ -1,4 +1,4 @@
-package com.zdy.router
+package com.zdy.router.arouter
 
 import com.alibaba.android.arouter.facade.template.IProvider
 
@@ -10,6 +10,6 @@ import com.alibaba.android.arouter.facade.template.IProvider
  */
 interface RouterService : IProvider {
 
-    fun sendData(data: String,disPatchData:IdisPatchData)
+    fun sendData(data: String,disPatchData: IdisPatchData)
 
 }

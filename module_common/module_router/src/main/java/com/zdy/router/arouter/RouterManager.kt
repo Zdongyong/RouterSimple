@@ -1,11 +1,7 @@
-package com.zdy
+package com.zdy.router.arouter
 
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
-import com.zdy.router.IdisPatchData
-import com.zdy.router.RouterService
-import com.zdy.router.impl.RouterServiceImpl
-import java.util.*
 
 /**
  * 创建日期：2022/9/9 on 21:18
@@ -14,7 +10,7 @@ import java.util.*
  */
 object RouterManager {
 
-    fun init(isDebug:Boolean , application: Application):RouterManager{
+    fun init(isDebug:Boolean , application: Application): RouterManager {
         if (isDebug){
             ARouter.openDebug()
             ARouter.openLog()
@@ -27,7 +23,7 @@ object RouterManager {
         ARouter.getInstance().build(path).navigation()
     }
 
-    fun sendMessage(path:String,data: String,disPatchData:IdisPatchData){
+    fun sendMessage(path:String,data: String,disPatchData: IdisPatchData){
         val routerService = ARouter.getInstance()
             .build(path)//发射数据
             .navigation() as RouterService

@@ -1,8 +1,7 @@
 package com.zdy.router
 
 import android.app.Application
-import com.alibaba.android.arouter.launcher.ARouter
-import com.zdy.RouterManager
+import com.zdy.router.arouter.RouterManager
 
 /**
  * 创建日期：2022/9/9 on 23:51

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.zdy.RouterManager
+import com.zdy.router.arouter.RouterManager
 import com.zdy.business_a.BusinessA
 import com.zdy.router.databinding.ActivityMainBinding
 

@@ -1,10 +1,10 @@
-package com.zdy.router.impl
+package com.zdy.router.arouter.impl
 
 import android.content.Context
 import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.zdy.router.IdisPatchData
-import com.zdy.router.RouterService
+import com.zdy.router.arouter.IdisPatchData
+import com.zdy.router.arouter.RouterService
 
 /**
  * 创建日期：2022/9/13 on 00:04

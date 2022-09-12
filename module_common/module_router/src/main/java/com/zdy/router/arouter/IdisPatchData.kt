@@ -1,4 +1,4 @@
-package com.zdy.router
+package com.zdy.router.arouter
 
 /**
  * 创建日期：2022/9/13 on 00:24
