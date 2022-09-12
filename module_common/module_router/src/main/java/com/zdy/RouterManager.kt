@@ -2,6 +2,9 @@ package com.zdy
 
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
+import com.zdy.router.IdisPatchData
+import com.zdy.router.RouterService
+import com.zdy.router.impl.RouterServiceImpl
 import java.util.*
 
 /**
@@ -20,20 +23,15 @@ object RouterManager {
         return this
     }
 
-    fun inject(objects: Objects){
-        ARouter.getInstance().inject(objects)
-    }
-
     fun navigation(path:String){
         ARouter.getInstance().build(path).navigation()
     }
 
-    fun sendMessage(path:String){
-        ARouter.getInstance()
-            .build(path)
-            .withString("zdy","666")
-            //发射数据
-            .navigation()
+    fun sendMessage(path:String,data: String,disPatchData:IdisPatchData){
+        val routerService = ARouter.getInstance()
+            .build(path)//发射数据
+            .navigation() as RouterService
+        routerService.sendData(data,disPatchData)
     }
 
 

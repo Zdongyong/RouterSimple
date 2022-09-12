@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.os.Handler
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
 import com.zdy.RouterManager
 import com.zdy.business_a.BusinessA
 import com.zdy.router.databinding.ActivityMainBinding
@@ -32,18 +31,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        businessA.init()
 
         mainBinding.sendMessage.apply {
             setOnClickListener {
-//                ARouter.getInstance()
-//                    .build("/business/BusinessA")
-//                    .withString("zdy","666")
-//                    //发射数据
-//                    .navigation()
-                RouterManager.sendMessage("/app/MainActivity")
+                RouterManager.sendMessage("/service/RouterServiceImpl","zdy",businessA)
                 Handler().postDelayed(Runnable {
-                    mainBinding.aroutGet.text = value
+                    mainBinding.aroutGet.text = businessA.get()
                 }, 1000)
             }
 

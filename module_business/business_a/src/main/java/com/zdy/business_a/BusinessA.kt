@@ -1,23 +1,19 @@
 package com.zdy.business_a
 
 import android.util.Log
-import com.alibaba.android.arouter.facade.annotation.Autowired
-import com.alibaba.android.arouter.facade.annotation.Route
+import com.zdy.router.IdisPatchData
 
-@Route(path = "/business/BusinessA")
-class BusinessA {
+class BusinessA :IdisPatchData{
 
-    fun init(){
-//        ARouter.getInstance().inject(this)
+    private var mValue:String?=""
+
+    override fun disPatch(value: String) {
+        Log.i("zdy","===disPatch===$value==")
+        mValue = value
     }
 
-    @JvmField
-    @Autowired(name = "zdy")
-    var value:String = "张三"
-
-    fun getValue():String{
-        Log.i("zdyzdy","======$value==")
-        return value
+    fun get():String{
+        return mValue?:""
     }
 
 }
