@@ -1,0 +1,5 @@
+rootProject.name = "RouterSample"
+include ':app'
+include ':module_common:module_router'
+include ':module_business:business_a'
+include ':module_business:business_b'
