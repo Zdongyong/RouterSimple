@@ -7,6 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.zdy.business_a.BusinessA
 import com.zdy.router.arouter.RouterManager
 import com.zdy.router.databinding.ActivityMainBinding
+import com.zdy.router.vrouter.VRouterManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +37,13 @@ class MainActivity : AppCompatActivity() {
                 Handler().postDelayed(Runnable {
                     mainBinding.aroutGet.text = businessA.get()
                 }, 1000)
+            }
+
+        }
+
+        mainBinding.sendMessageV.apply {
+            setOnClickListener {
+                VRouterManager.getInstance(this@MainActivity)?.sendMessage("/business_b/BusinessB","zdy")
             }
 
         }
