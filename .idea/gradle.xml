@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/module_business/business_b" />
             <option value="$PROJECT_DIR$/module_common" />
             <option value="$PROJECT_DIR$/module_common/module_router" />
+            <option value="$PROJECT_DIR$/module_common/module_router_annotation" />
+            <option value="$PROJECT_DIR$/module_common/module_router_compile" />
           </set>
         </option>
       </GradleProjectSettings>

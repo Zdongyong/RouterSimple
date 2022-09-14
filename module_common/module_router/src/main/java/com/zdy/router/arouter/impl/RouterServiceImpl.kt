@@ -3,7 +3,7 @@ package com.zdy.router.arouter.impl
 import android.content.Context
 import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.zdy.router.arouter.IdisPatchData
+import com.zdy.router.IdisPatchData
 import com.zdy.router.arouter.RouterService
 
 /**

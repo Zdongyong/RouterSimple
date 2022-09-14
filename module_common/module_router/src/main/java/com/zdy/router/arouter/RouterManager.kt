@@ -2,6 +2,7 @@ package com.zdy.router.arouter
 
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
+import com.zdy.router.IdisPatchData
 
 /**
  * 创建日期：2022/9/9 on 21:18

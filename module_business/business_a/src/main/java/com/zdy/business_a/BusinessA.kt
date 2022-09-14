@@ -1,7 +1,7 @@
 package com.zdy.business_a
 
 import android.util.Log
-import com.zdy.router.arouter.IdisPatchData
+import com.zdy.router.IdisPatchData
 
 class BusinessA : IdisPatchData {
 

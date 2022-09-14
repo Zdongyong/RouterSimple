@@ -1,6 +1,7 @@
 package com.zdy.router.arouter
 
 import com.alibaba.android.arouter.facade.template.IProvider
+import com.zdy.router.IdisPatchData
 
 
 /**
