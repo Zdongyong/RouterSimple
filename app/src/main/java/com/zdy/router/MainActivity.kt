@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.alibaba.android.arouter.facade.annotation.Autowired
+import com.alibaba.android.arouter.launcher.ARouter
 import com.zdy.business_a.BusinessA
 import com.zdy.router.arouter.RouterManager
 import com.zdy.router.databinding.ActivityMainBinding
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.jumpToA.apply {
             setOnClickListener {
-//                ARouter.getInstance().build("/app/SecondActivity").navigation()
+                ARouter.getInstance().build("/app/SecondActivity").navigation()
                 RouterManager.navigation("/app/SecondActivity")
             }
         }
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.sendMessageV.apply {
             setOnClickListener {
-                VRouterManager.getInstance(this@MainActivity)?.sendMessage("/business_b/BusinessB","zdy")
+                VRouterManager.getInstance(this@MainActivity)?.sendMessage("/business_b/BusinessB","Vrouter发送的数据")
             }
 
         }
