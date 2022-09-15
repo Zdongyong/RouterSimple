@@ -1,6 +1,7 @@
 package com.zdy.router.vrouter
 
 import android.content.Context
+import com.zdy.router.IRouter
 import com.zdy.router.IdisPatchData
 
 /**
@@ -10,16 +11,9 @@ import com.zdy.router.IdisPatchData
  */
 class VRouterManager {
 
-
-    init {
-        val clazz = "".javaClass
-        val call = clazz.newInstance() as IdisPatchData
-        call.disPatch("111");
-
-    }
+    private val routerMap: Map<String, Class<out IdisPatchData?>> = HashMap()
 
     companion object {
-
         private var instance: VRouterManager? = null
 
         @Synchronized
@@ -32,12 +26,15 @@ class VRouterManager {
 
     }
 
-
-
-
+    /**
+     * path = /business_b/BusinessB
+     */
     fun sendMessage(path: String, data: String) {
-
-
+        val split = path.split("/")
+        val className = "com.zdy.router." + (split[1] + "IRouter")
+        val forName: IRouter = Class.forName(className).newInstance() as IRouter
+        forName.classRegister(routerMap)
+        routerMap[path]?.newInstance()?.disPatch(data)
     }
 
 

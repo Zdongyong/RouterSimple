@@ -14,7 +14,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                argument("targetModuleName", "businessB")
+                argument("targetModuleName", project.getName())
             }
         }
     }
